@@ -6,6 +6,9 @@ namespace SecondTask
     [TestFixture]
     public class SuccessfulTests
     {
+        /// <summary>
+        /// Setting up a Selenium Chrome WebDriver.
+        /// </summary>
         IWebDriver driver;
 
         [SetUp]
@@ -17,6 +20,9 @@ namespace SecondTask
             };
         }
 
+        /// <summary>
+        /// Test that checks that if we are writing actual username and password we have successfully logged in.
+        /// </summary>
         [Test]
         public void LoginForm_ExistingLoginAndPassword_ShowsShopPage()
         {
@@ -34,6 +40,9 @@ namespace SecondTask
             Assert.That(newPageTitle.Text == TitleOfNewPage);
         }
 
+        /// <summary>
+        /// Quitting our Chrome driver.
+        /// </summary>
         [OneTimeTearDown]
         public void OnetimeTeardown()
         {

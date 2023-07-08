@@ -6,6 +6,10 @@ namespace SecondTask
     [TestFixture]
     public class Tests
     {
+
+        /// <summary>
+        /// Setting up a Selenium Chrome WebDriver.
+        /// </summary>
         IWebDriver driver;
 
         [SetUp]
@@ -17,6 +21,10 @@ namespace SecondTask
             };
 
         }
+
+        /// <summary>
+        /// Test that checks that if we have empty <param name="username"></param> then a specific error message is displayed.
+        /// </summary>
 
         [TestCase ("")]
 
@@ -37,6 +45,11 @@ namespace SecondTask
             driver.Close();
         }
 
+        /// <summary>
+        /// Test that checks that if we have an actual <param name="username"></param> and empty <param name="password"></param>
+        /// then a specific error message is displayed.
+        /// </summary>
+
         [TestCase("standard_user", "")]
 
         public void PasswordField_PasswordFieldIsEmpty_PasswordEmptyErrorMessageIsShowing(string username, string password)
@@ -56,6 +69,9 @@ namespace SecondTask
             Assert.That(passwordError.Text == passwordErrorMessage);
         }
 
+        /// <summary>
+        /// Quitting our Chrome driver.
+        /// </summary>
         [OneTimeTearDown]
         public void OnetimeTeardown()
         {
